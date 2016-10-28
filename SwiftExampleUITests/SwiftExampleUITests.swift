@@ -31,6 +31,12 @@ class SwiftExampleUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        app.buttons["append"].tap()
+
+        let s = app.staticTexts.element(matching: .any, identifier: "result").label
+        XCTAssertEqual(s, "3")
     }
     
 }
